@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $arModuleVersion = array(
 	'VERSION' => '0.0.6',
