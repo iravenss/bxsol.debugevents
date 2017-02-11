@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Mineev Aleksey (2016 ©)
  * alekseym@bxsolutions.ru
  */
