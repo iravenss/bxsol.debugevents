@@ -112,6 +112,9 @@ foreach ($events as $module_id => $events)
 
 				$manager->fixBugs($class);
 
+
+
+
 				if ($class != '' && class_exists($class, true) && method_exists($class, $method))
 				{
 					$reflFunc = new ReflectionMethod($class, $method);
@@ -129,6 +132,22 @@ foreach ($events as $module_id => $events)
 					$file_path = str_replace($_SERVER['DOCUMENT_ROOT'], '', $file_path);
 					$line      = $reflFunc->getStartLine();
 				}
+
+                if (class_exists($class))
+                {
+                    $modelReflector = new ReflectionClass($class);
+                    if($modelReflector)
+                    {
+                        if(method_exists($class, $method)){
+                            $method = $modelReflector->getMethod($method);
+                        }
+
+                    }
+                }else{
+                    $method = '';
+                }
+
+
 
 				if (!empty($h['SORT']))
 				{
